@@ -1,10 +1,9 @@
-\# css-efecto-brillo
+\# css-windows98
 
-> Efecto brillo parpadeante aleatorio hecho con CSS puro.
+> Marco ilustrativo en css.
 
 
-
-<img src="./brilloCSS.gif" width="" height=""/>)
+<img src="./css-win98-preview.gif" width="" height=""/>)
 
 
 
@@ -14,7 +13,8 @@
 
 
 
-Animación de estrellas que brillan a diferente intensidad y tiempo variable sobre una fotografia a baja resolucion de luces que simulan estrellas infinitas. La animación tambien se puede ver \[aqui](https://www.instagram.com/corpoanimato/-)
+Ilustración creada con HTML y CSS puro que simula un par de ventanas estilo Windows98, también se puede usar como marco de contenido.
+aprendizaje aplicado by @corpoanimato 
 
 
 
