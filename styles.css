@@ -31,7 +31,7 @@
     background: radial-gradient(ellipse at center, #dfeaf0 0%, #b9cdd8 100%);
   }
 
-  /* Envoltorio al que se le aplica la aberración cromática + scanlines */
+  /* ENVOLTORIO-LO QUE ENVUELVE A LA VENTANA */
   .stage {
     position: relative;
     width: min(760px, 92vw);
