@@ -1,0 +1,149 @@
+  :root {
+    --win-navy: #000080;
+    --win-blue: #1084d0;
+    --win-gray: #c0c0c0;
+    --win-shadow: #808080;
+    --win-shadow-2: #000000;
+    --win-light: #ffffff;
+    --win-light-2: #dfdfdf;
+    --accent-pink: #ff2fc0;
+    --accent-pink-2: #b3007a;
+    --font-ui: Tahoma, "MS Sans Serif", Geneva, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: var(--font-ui);
+  }
+
+  .scene {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 16px;
+    background: radial-gradient(ellipse at center, #dfeaf0 0%, #b9cdd8 100%);
+  }
+
+  /* Envoltorio al que se le aplica la aberración cromática + scanlines */
+  .stage {
+    position: relative;
+    width: min(760px, 92vw);
+    filter: url(#chromaShift);
+  }
+
+  .window98 {
+    background: var(--win-gray);
+    padding: 2px;
+    box-shadow:
+      inset -1px -1px 0 var(--win-shadow-2),
+      inset 1px 1px 0 var(--win-light),
+      inset -2px -2px 0 var(--win-shadow),
+      inset 2px 2px 0 var(--win-light-2);
+  }
+
+  .titlebar98 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 22px;
+    padding: 0 4px;
+    background: linear-gradient(90deg, var(--win-navy) 0%, var(--win-blue) 100%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-shadow: -1px 0 rgba(248, 7, 140, 0.938), 1px 0 rgba(94, 232, 253, 0.847);
+  }
+
+  .titlebar98.pink {
+    background: linear-gradient(90deg, var(--accent-pink-2), var(--accent-pink));
+  }
+
+  .titlebar98 .title-text {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .win98-btns {
+    display: flex;
+    gap: 2px;
+  }
+
+  .win98-btn {
+    width: 18px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--win-gray);
+    box-shadow:
+      inset -1px -1px 0 var(--win-shadow-2),
+      inset 1px 1px 0 var(--win-light),
+      inset -2px -2px 0 var(--win-shadow),
+      inset 2px 2px 0 var(--win-light-2);
+  }
+
+  .win98-btn:active {
+    box-shadow:
+      inset 1px 1px 0 var(--win-shadow-2),
+      inset -1px -1px 0 var(--win-light);
+  }
+
+  .menubar98 {
+    display: flex;
+    gap: 14px;
+    padding: 3px 8px;
+    background: var(--win-gray);
+    font-size: 11px;
+    color: #000;
+  }
+
+  .menubar98 u {
+    text-decoration: underline;
+  }
+
+  /*EJEMPLO DEL CONTENIDO DE VENTANA*/
+  .content98 {
+    height: 40%;
+    width: 98%;
+    margin: 2px;
+    padding: 14px 16px;
+    overflow: hidden;
+    position: relative;
+    background: whitesmoke; /*se ajusta segun el contenido*/
+    box-shadow:
+      inset -1px -1px 0 var(--win-light-2),
+      inset 1px 1px 0 var(--win-shadow-2),
+      inset -2px -2px 0 var(--win-light),
+      inset 2px 2px 0 var(--win-shadow);
+  }
+
+  /* VENTANA EMERGENTE*/
+  .window98.popup {
+    position: absolute;
+    right: -6%;
+    bottom: -14%;
+    width: 52%;
+    z-index: 2;
+  }
+
+  /*AJUSTES AL TAMAÑO DE VENTANA*/
+  @media (max-width:640px) {
+    .window98.popup {
+      width: 70%;
+      right: -4%;
+      bottom: -10%;
+    }
+
+    .content98 {
+      height: 280px;
+    }
+  }
